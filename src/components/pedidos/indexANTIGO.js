@@ -11,11 +11,8 @@ import md5 from 'md5'
 
 function Pedidos() {
   const [clientInfo, setClientInfo] = useState([])
-  const [clientOrders, setClientOrders] = useState([])
   const url =
     'https://api.groupsoft.com.br/gsserver/datasnap/rest/TServerMethodsApp/Cliente/'
-  const url_pedidos =
-    'https://api.groupsoft.com.br/gsserver/datasnap/rest/TServerMethodsApp/Pedidos/895120317/'
   useEffect(() => {
     $('#second_tab').hide()
     $('#third_tab').hide()
@@ -28,16 +25,9 @@ function Pedidos() {
 
     const json = await methodGET(url + id)
 
-    if (json[0] !== undefined) {
-      setClientInfo(json[0])
-      // console.log(json)
-    }
-
-    const aux_orders = await methodGET(url_pedidos + id)
-
-    if (aux_orders !== undefined) {
-      setClientOrders(aux_orders)
-      // console.log(aux_orders)
+    if (json !== undefined) {
+      setClientInfo(json)
+      console.log(json)
     }
   }, [])
 
@@ -53,81 +43,9 @@ function Pedidos() {
     clientInfo['ASV001_10'] = ' '
   }
 
-  function renderOrders() {
-    let orders = []
-
-    Object.keys(clientOrders).map((x, i) => {
-      const status_info = [
-        'Aberto',
-        'Recebido',
-        'Em Preparo',
-        'Enviado',
-        'Cancelado',
-        'Concluído',
-      ]
-
-      var status_desc = status_info[clientOrders[i]['ASV013_07'] - 1]
-
-      orders.push(
-        <Fragment>
-          <div class="orders_info">
-            <div class="orders_card">
-              <div>
-                <p> ID: </p>
-                <p> {clientOrders[i]['ASV013_01']}</p>
-              </div>
-
-              <div>
-                <p> Data:</p>
-                <p>
-                  {' '}
-                  {moment(clientOrders[i]['ASV013_05'])
-                    .add(1, 'days')
-                    .format('DD/MM/YYYY')}
-                </p>
-              </div>
-
-              <div>
-                <p> Status: </p>
-                <p>{status_desc} </p>
-              </div>
-            </div>
-
-            <div class="orders_card">
-              <div>
-                <p> Pedido: </p>
-                <p class="p_order">
-                  {' '}
-                  R$ {clientOrders[i]['ASV013_09'].toFixed(2)}
-                </p>
-              </div>
-              <div>
-                <p> Frete:</p>
-                <p class="p_order">
-                  {' '}
-                  R$ {clientOrders[i]['ASV013_10'].toFixed(2)}
-                </p>
-              </div>
-              <div>
-                <p> Total: </p>
-                <p class="p_order">
-                  {' '}
-                  R$ {clientOrders[i]['ASV013_12'].toFixed(2)}{' '}
-                </p>
-              </div>
-            </div>
-          </div>
-          <hr />
-        </Fragment>
-      )
-      return orders.reverse()
-    })
-    return orders.reverse()
-  }
-
   return (
     <Fragment>
-      <div className="">
+      <div className="body_cadastro">
         <div id="container_perfil">
           <div id="perfil">
             <div id="last_page">
@@ -374,7 +292,7 @@ function Pedidos() {
               </div>
             </div>
 
-            <div id="second_tab">{renderOrders()}</div>
+            <div id="second_tab">a</div>
 
             <div id="third_tab">
               <div className="elemento_container">

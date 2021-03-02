@@ -27,8 +27,8 @@ function Main() {
     Swal.fire({
       title: 'Deseja Adicionar a tela Inicial?',
       showDenyButton: true,
-      confirmButtonText: `Adicionar`,
       denyButtonText: `Não Adicionar`,
+      confirmButtonText: `Adicionar`,
     }).then((result) => {
       if (result.isConfirmed) {
         myPrompt.prompt()

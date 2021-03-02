@@ -75,43 +75,6 @@
         box-shadow: 1px 1px 10px gray;
 }
 
-.orders_info{
-    background-color: rgb(0,0,0,0.03);
-    border-radius: 8px;
-    margin: 0 8px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 12px;
-}
-
-.orders_card {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-}
-
-
-.orders_card div{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.p_order{
-    color: var(--secondary-color);
-    font-weight: bold;
-    text-align: left
-}
-
-.orders_card p:first-child {
-    font-weight: bold;
-    text-align: right;
-    padding-right: 8px;
-}
-
-.orders_card p:last-child {
-    text-align: left;
-}
-
-
 @media(max-width:1000px) {
 
     #container_perfil{
@@ -230,9 +193,5 @@
 
         .cadastro_box{
             margin-bottom: 16px;
-        }
-
-        .orders_card div p {
-            font-size: 14px;
         }
 }

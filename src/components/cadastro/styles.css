@@ -4,10 +4,10 @@
 
 #container_cadastro {
     background: rgb(255, 255, 255);
-    height: 80vh;
     position: relative;
     width: 800px;
-    height: 800px;
+    padding: 16px 0;
+    height: 100%;
     margin: 24px auto;
     /* border: 2px solid var(--lines); */
     border-radius: 8px;
@@ -15,10 +15,14 @@
 }
 
 .elemento {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center; */
+
+    padding-top: 4vh;
     width: 100%;
     text-align: center;
 }
@@ -46,6 +50,7 @@
     row-gap: 24px;
     column-gap: 12px;
 }
+
 
 .inp {
     position: relative;
@@ -134,15 +139,6 @@
     transition: all 0.1s ease;
 }
 
-/* .body_cadastro {
-    background-image: url("iconDefault.png");
-    background-position: center;
-    background-origin: content-box;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-    font-family: "Noto Sans", sans-serif;
-} */
 
 .body_cadastro{
     position: relative;
@@ -181,11 +177,13 @@
     transition: 200ms;
 }
 
+
 #last_page {
     text-align: left;
     margin: 8px 16px 0;
     position: absolute;
 }
+
 
 #b_lp {
     color: var(--secondary-color)
@@ -194,4 +192,220 @@
 #b_lp:hover {
     color: var(--secondary-color-hover);
     transition: 200ms;
+}
+
+/* ------------------------------------------------------------------- */
+  
+  #radio_typeperson select {
+    background-color:  rgba(0, 0, 0, 0.05);
+    color: black;
+    padding: 16px 12px 0 12px;
+    font-weight: 600;
+    width: 70%;
+    height: 56px;
+    border: none;
+    font-size: 16px;
+    box-shadow: inset 0 -1px 0 gray;
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    transition: all 0.15s ease;
+  }
+
+  .inp input {
+    border: 0;
+    font-family: inherit;
+}
+  
+  #radio_typeperson::before {
+    content: "\f13a";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+  
+  #radio_typeperson:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  #radio_typeperson select option {
+    padding: 30px;
+  }
+
+
+select {
+    padding: 16px 12px !important;
+}
+
+  @media(max-width:1000px) {
+
+
+    select { 
+        width: 100% !important;
+        font-size: 14px !important;
+    }
+
+    option { 
+        font-size: 14px;
+    }
+
+    #container_cadastro{
+    width: 600px;
+    }
+
+    .elemento_title{
+        margin:  8px 32px 0 !important;
+    }
+
+    .elemento_title h4 {
+        font-size: 16px;
+    }
+
+    #last_page {
+        display: block;
+        top: 8px;
+    }
+
+    .cadastro_box{
+        width: 240px !important;
+        margin: 0 auto;
+    }
+
+}
+
+@media(max-width: 640px){
+
+    select { 
+        width: 100% !important;
+        font-size: 14px !important;
+    }
+
+    #container_cadastro{
+        width: 400px;
+        }
+
+        .elemento_title{
+            margin:  8px 16px 0 !important;
+        }
+    
+    
+        .elemento_title h4 {
+            font-size: 12px;
+        }
+
+        #last_page_cadastro {
+            display: block;
+            top: 4px;
+        }
+
+        .cadastro_box{
+            width: 160px !important;
+            height: 54px !important;
+            margin: 0 auto;
+        }
+
+        #botoes_header div button{
+            font-size: 16px !important;
+        }
+
+        .inp .label {
+            font-size: 12px;
+        }
+
+        .inp input {
+            font-size: 12px;
+        }
+}
+
+
+@media(max-width: 560px){
+
+    select { 
+        width: 100% !important;
+        font-size: 14px !important;
+    }
+
+    #container_cadastro{
+        width: 400px;
+        }
+
+        .elemento_title{
+            margin:  8px 16px 0 !important;
+        }
+    
+    
+        .elemento_title h4 {
+            font-size: 12px;
+        }
+
+        #last_page_cadastro {
+            display: block;
+            top: 4px;
+        }
+
+        .cadastro_box{
+            width: 160px !important;
+            height: 54px !important;
+            margin: 0 auto;
+        }
+
+        .inp .label {
+            font-size: 12px;
+        }
+
+}
+
+@media(max-width: 450px){
+
+    select { 
+        width: 100% !important;
+        font-size: 14px !important;
+        text-align: center !important;
+    }
+
+    #container_cadastro{
+        width: 280px;
+        }
+
+        .elemento_title{
+            margin:  8px 16px 0 !important;
+        }
+    
+    
+        .elemento_title h4 {
+            font-size: 12px;
+        }
+
+        #last_page_cadastro {
+            display: block;
+            top: 2px;
+        }
+
+        .cadastro_box{
+            width: 160px !important;
+            height: 54px !important;
+            margin: 0 auto;
+        }
+
+        .elemento_container {
+            display: inline-block !important;
+        }
+
+        .cadastro_box{
+            margin-bottom: 16px;
+        }
+
+        .inp .label {
+            font-size: 12px;
+        }
 }

@@ -5,6 +5,7 @@ header {
     background-color: var(--secondary-color);
 }
 
+
 .Header {
     justify-content: space-between;
     display: grid;
@@ -43,9 +44,10 @@ header {
 }
 
 .login:hover {
-    color: rgb(224, 224, 224);
+    color:rgb(224, 224, 224);
     transition: 200ms;
 }
+
 
 #login_box_aux {
     display: grid;
@@ -94,4 +96,8 @@ header {
 #login_fotter a {
     text-decoration: none;
     color: var(--lines);
+}
+
+#perfil_b {
+    padding: 0 !important;
 }
